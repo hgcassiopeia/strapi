@@ -49,6 +49,11 @@ module.exports = {
       request: { body },
       state: { userAbility, admin },
     } = ctx;
+
+    // Customize User 
+    body.email = `${body.employeeId}@toyotamuangchon.com`;
+    // End Customize User 
+
     const { email, username, password } = body;
 
     const pm = strapi.admin.services.permission.createPermissionsManager(
